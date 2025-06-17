@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ciudad del Futuro / Future City</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <style>
     body {
       background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
@@ -17,9 +17,24 @@
       backdrop-filter: blur(12px);
       border: 1px solid rgba(255, 255, 255, 0.2);
     }
+    video.bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.3);
+    }
   </style>
 </head>
 <body>
+
+  <!-- Background Video -->
+  <video autoplay muted loop class="bg-video">
+    <source src="https://cdn.coverr.co/videos/coverr-aerial-of-skyscrapers-in-dubai-3562/1080p.mp4" type="video/mp4">
+  </video>
 
   <!-- Header -->
   <header class="p-6 text-center bg-black bg-opacity-30 glass relative">
@@ -75,19 +90,26 @@
 
   </section>
 
-  <!-- Floating Skyscrapers -->
-  <section class="p-10 text-center" data-aos="zoom-in">
-    <h2 class="text-3xl md:text-5xl font-bold mb-6" data-lang="Rascacielos Flotantes|Floating Skyscrapers">Rascacielos Flotantes</h2>
-    <p class="text-gray-300 max-w-3xl mx-auto" data-lang="Nuestros edificios no están anclados al suelo. Utilizando campos magnéticos avanzados, los rascacielos flotan en el aire, optimizando espacio y vistas panorámicas.|Our buildings are not anchored to the ground. Using advanced magnetic fields, skyscrapers float in the air, maximizing space and panoramic views.">
-      Nuestros edificios no están anclados al suelo. Utilizando campos magnéticos avanzados, los rascacielos flotan en el aire, optimizando espacio y vistas panorámicas.
-    </p>
-    <img src="https://i.imgur.com/2ohZpWg.png" alt="Edificios flotantes" class="w-full max-w-4xl mx-auto mt-8 rounded-xl" />
+  <!-- AI & Healthcare -->
+  <section class="p-10 grid md:grid-cols-2 gap-10">
+    <div class="glass p-6 rounded-xl" data-aos="fade-right">
+      <h2 class="text-2xl font-semibold" data-lang="Inteligencia Artificial en Todo|AI Everywhere">Inteligencia Artificial en Todo</h2>
+      <p class="text-gray-300 mt-2" data-lang="Cada sistema en la ciudad usa IA: tráfico, clima, seguridad y asistencia personalizada.|Every system in the city uses AI: traffic, climate, security, and personal assistance.">
+        Cada sistema en la ciudad usa IA: tráfico, clima, seguridad y asistencia personalizada.
+      </p>
+    </div>
+    <div class="glass p-6 rounded-xl" data-aos="fade-left">
+      <h2 class="text-2xl font-semibold" data-lang="Salud Autónoma|Autonomous Healthcare">Salud Autónoma</h2>
+      <p class="text-gray-300 mt-2" data-lang="Clínicas automatizadas diagnostican y tratan con precisión quirúrgica en minutos.|Automated clinics diagnose and treat with surgical precision in minutes.">
+        Clínicas automatizadas diagnostican y tratan con precisión quirúrgica en minutos.
+      </p>
+    </div>
   </section>
 
   <!-- Footer -->
   <footer class="text-center p-6 mt-10 bg-black bg-opacity-30 glass">
-    <p class="text-gray-400" data-lang="&copy; 2050 Ciudad del Futuro. Todos los derechos reservados.|&copy; 2050 Future City. All rights reserved.">
-      &copy; 2050 Ciudad del Futuro. Todos los derechos reservados.
+    <p class="text-gray-400" data-lang="© 2050 Ciudad del Futuro. Todos los derechos reservados.|© 2050 Future City. All rights reserved.">
+      © 2050 Ciudad del Futuro. Todos los derechos reservados.
     </p>
   </footer>
 
@@ -97,16 +119,25 @@
     AOS.init({ duration: 1000 });
 
     const langBtn = document.getElementById("langBtn");
-    let currentLang = "es"; // default
+    let currentLang = localStorage.getItem("language") || "es";
 
-    langBtn.addEventListener("click", () => {
-      currentLang = currentLang === "es" ? "en" : "es";
-      langBtn.textContent = currentLang === "es" ? "English" : "Español";
+    function switchLang(toLang) {
+      currentLang = toLang;
+      localStorage.setItem("language", toLang);
+      langBtn.textContent = toLang === "es" ? "English" : "Español";
 
       document.querySelectorAll("[data-lang]").forEach(el => {
         const [es, en] = el.getAttribute("data-lang").split("|");
-        el.innerHTML = currentLang === "es" ? es : en;
+        el.textContent = toLang === "es" ? es : en;
       });
+    }
+
+    langBtn.addEventListener("click", () => {
+      switchLang(currentLang === "es" ? "en" : "es");
+    });
+
+    window.addEventListener("DOMContentLoaded", () => {
+      switchLang(currentLang);
     });
   </script>
 
