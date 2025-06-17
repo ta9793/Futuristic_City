@@ -1,9 +1,94 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ciudad del Futuro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="p-6 text-center bg-black bg-opacity-30 glass">
+    <h1 class="text-4xl md:text-6xl font-bold" data-aos="fade-down">Bienvenidos a la Ciudad del Futuro</h1>
+    <p class="mt-4 text-xl text-gray-300" data-aos="fade-up" data-aos-delay="100">
+      Una visión avanzada, limpia y flotante de la civilización moderna.
+    </p>
+  </header>
+
+  <!-- Features Section -->
+  <section class="p-10 grid md:grid-cols-2 gap-10">
     
-  </head>
-  <body>
-    
-  </body>
+    <!-- Flying Cars -->
+    <div class="glass p-6 rounded-xl" data-aos="fade-right">
+      <img src="https://i.imgur.com/hK2T6Qe.png" alt="Autos voladores" class="w-full h-60 object-cover rounded-xl mb-4" />
+      <h2 class="text-2xl font-semibold">Autos Voladores</h2>
+      <p class="text-gray-300 mt-2">
+        Olvídate del tráfico. En nuestra ciudad, los vehículos vuelan silenciosamente impulsados por energía limpia.
+      </p>
+    </div>
+
+    <!-- Smart Homes -->
+    <div class="glass p-6 rounded-xl" data-aos="fade-left">
+      <img src="https://i.imgur.com/Y7vNOmA.png" alt="Casas inteligentes" class="w-full h-60 object-cover rounded-xl mb-4" />
+      <h2 class="text-2xl font-semibold">Casas Inteligentes</h2>
+      <p class="text-gray-300 mt-2">
+        Controla todo con tu voz o desde tu móvil: luces, temperatura, seguridad y más. Bienvenido al hogar inteligente.
+      </p>
+    </div>
+
+    <!-- Hoverboards -->
+    <div class="glass p-6 rounded-xl" data-aos="fade-right">
+      <img src="https://i.imgur.com/uwB8TIr.png" alt="Hoverboards" class="w-full h-60 object-cover rounded-xl mb-4" />
+      <h2 class="text-2xl font-semibold">Hoverboards</h2>
+      <p class="text-gray-300 mt-2">
+        Muevémonos en el aire. Los hoverboards son el medio de transporte personal más popular entre jóvenes y adultos.
+      </p>
+    </div>
+
+    <!-- Clean Energy -->
+    <div class="glass p-6 rounded-xl" data-aos="fade-left">
+      <img src="https://i.imgur.com/W3N5jzQ.png" alt="Energía limpia" class="w-full h-60 object-cover rounded-xl mb-4" />
+      <h2 class="text-2xl font-semibold">Energía 100% Limpia</h2>
+      <p class="text-gray-300 mt-2">
+        Toda la ciudad funciona con energía solar, eólica y de fusión. Sostenibilidad es nuestra prioridad.
+      </p>
+    </div>
+
+  </section>
+
+  <!-- Floating Skyscrapers -->
+  <section class="p-10 text-center" data-aos="zoom-in">
+    <h2 class="text-3xl md:text-5xl font-bold mb-6">Rascacielos Flotantes</h2>
+    <p class="text-gray-300 max-w-3xl mx-auto">
+      Nuestros edificios no están anclados al suelo. Utilizando campos magnéticos avanzados, los rascacielos flotan en el aire, optimizando espacio y vistas panorámicas.
+    </p>
+    <img src="https://i.imgur.com/2ohZpWg.png" alt="Edificios flotantes" class="w-full max-w-4xl mx-auto mt-8 rounded-xl" />
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center p-6 mt-10 bg-black bg-opacity-30 glass">
+    <p class="text-gray-400">&copy; 2050 Ciudad del Futuro. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000 });
+  </script>
+
+</body>
 </html>
