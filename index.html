@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ciudad del Futuro</title>
+  <title>Ciudad del Futuro / Future City</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
@@ -22,21 +22,26 @@
 <body>
 
   <!-- Header -->
-  <header class="p-6 text-center bg-black bg-opacity-30 glass">
-    <h1 class="text-4xl md:text-6xl font-bold" data-aos="fade-down">Bienvenidos a la Ciudad del Futuro</h1>
-    <p class="mt-4 text-xl text-gray-300" data-aos="fade-up" data-aos-delay="100">
+  <header class="p-6 text-center bg-black bg-opacity-30 glass relative">
+    <button id="langBtn" class="absolute top-4 right-6 px-4 py-2 bg-white text-black rounded-md hover:bg-gray-300 transition">
+      English
+    </button>
+    <h1 class="text-4xl md:text-6xl font-bold" data-lang="Bienvenidos a la Ciudad del Futuro|Welcome to the City of the Future" data-aos="fade-down">
+      Bienvenidos a la Ciudad del Futuro
+    </h1>
+    <p class="mt-4 text-xl text-gray-300" data-lang="Una visión avanzada, limpia y flotante de la civilización moderna.|An advanced, clean, and floating vision of modern civilization." data-aos="fade-up" data-aos-delay="100">
       Una visión avanzada, limpia y flotante de la civilización moderna.
     </p>
   </header>
 
   <!-- Features Section -->
   <section class="p-10 grid md:grid-cols-2 gap-10">
-    
+
     <!-- Flying Cars -->
     <div class="glass p-6 rounded-xl" data-aos="fade-right">
       <img src="https://i.imgur.com/hK2T6Qe.png" alt="Autos voladores" class="w-full h-60 object-cover rounded-xl mb-4" />
-      <h2 class="text-2xl font-semibold">Autos Voladores</h2>
-      <p class="text-gray-300 mt-2">
+      <h2 class="text-2xl font-semibold" data-lang="Autos Voladores|Flying Cars">Autos Voladores</h2>
+      <p class="text-gray-300 mt-2" data-lang="Olvídate del tráfico. En nuestra ciudad, los vehículos vuelan silenciosamente impulsados por energía limpia.|Forget traffic. In our city, vehicles fly silently using clean energy.">
         Olvídate del tráfico. En nuestra ciudad, los vehículos vuelan silenciosamente impulsados por energía limpia.
       </p>
     </div>
@@ -44,8 +49,8 @@
     <!-- Smart Homes -->
     <div class="glass p-6 rounded-xl" data-aos="fade-left">
       <img src="https://i.imgur.com/Y7vNOmA.png" alt="Casas inteligentes" class="w-full h-60 object-cover rounded-xl mb-4" />
-      <h2 class="text-2xl font-semibold">Casas Inteligentes</h2>
-      <p class="text-gray-300 mt-2">
+      <h2 class="text-2xl font-semibold" data-lang="Casas Inteligentes|Smart Homes">Casas Inteligentes</h2>
+      <p class="text-gray-300 mt-2" data-lang="Controla todo con tu voz o desde tu móvil: luces, temperatura, seguridad y más. Bienvenido al hogar inteligente.|Control everything with your voice or phone: lights, temperature, security, and more. Welcome to the smart home.">
         Controla todo con tu voz o desde tu móvil: luces, temperatura, seguridad y más. Bienvenido al hogar inteligente.
       </p>
     </div>
@@ -53,17 +58,17 @@
     <!-- Hoverboards -->
     <div class="glass p-6 rounded-xl" data-aos="fade-right">
       <img src="https://i.imgur.com/uwB8TIr.png" alt="Hoverboards" class="w-full h-60 object-cover rounded-xl mb-4" />
-      <h2 class="text-2xl font-semibold">Hoverboards</h2>
-      <p class="text-gray-300 mt-2">
-        Muevémonos en el aire. Los hoverboards son el medio de transporte personal más popular entre jóvenes y adultos.
+      <h2 class="text-2xl font-semibold" data-lang="Hoverboards|Hoverboards">Hoverboards</h2>
+      <p class="text-gray-300 mt-2" data-lang="Movámonos en el aire. Los hoverboards son el medio de transporte personal más popular entre jóvenes y adultos.|Let’s move through the air. Hoverboards are the most popular personal transport for both youth and adults.">
+        Movámonos en el aire. Los hoverboards son el medio de transporte personal más popular entre jóvenes y adultos.
       </p>
     </div>
 
     <!-- Clean Energy -->
     <div class="glass p-6 rounded-xl" data-aos="fade-left">
       <img src="https://i.imgur.com/W3N5jzQ.png" alt="Energía limpia" class="w-full h-60 object-cover rounded-xl mb-4" />
-      <h2 class="text-2xl font-semibold">Energía 100% Limpia</h2>
-      <p class="text-gray-300 mt-2">
+      <h2 class="text-2xl font-semibold" data-lang="Energía 100% Limpia|100% Clean Energy">Energía 100% Limpia</h2>
+      <p class="text-gray-300 mt-2" data-lang="Toda la ciudad funciona con energía solar, eólica y de fusión. Sostenibilidad es nuestra prioridad.|The entire city runs on solar, wind, and fusion power. Sustainability is our priority.">
         Toda la ciudad funciona con energía solar, eólica y de fusión. Sostenibilidad es nuestra prioridad.
       </p>
     </div>
@@ -72,8 +77,8 @@
 
   <!-- Floating Skyscrapers -->
   <section class="p-10 text-center" data-aos="zoom-in">
-    <h2 class="text-3xl md:text-5xl font-bold mb-6">Rascacielos Flotantes</h2>
-    <p class="text-gray-300 max-w-3xl mx-auto">
+    <h2 class="text-3xl md:text-5xl font-bold mb-6" data-lang="Rascacielos Flotantes|Floating Skyscrapers">Rascacielos Flotantes</h2>
+    <p class="text-gray-300 max-w-3xl mx-auto" data-lang="Nuestros edificios no están anclados al suelo. Utilizando campos magnéticos avanzados, los rascacielos flotan en el aire, optimizando espacio y vistas panorámicas.|Our buildings are not anchored to the ground. Using advanced magnetic fields, skyscrapers float in the air, maximizing space and panoramic views.">
       Nuestros edificios no están anclados al suelo. Utilizando campos magnéticos avanzados, los rascacielos flotan en el aire, optimizando espacio y vistas panorámicas.
     </p>
     <img src="https://i.imgur.com/2ohZpWg.png" alt="Edificios flotantes" class="w-full max-w-4xl mx-auto mt-8 rounded-xl" />
@@ -81,13 +86,28 @@
 
   <!-- Footer -->
   <footer class="text-center p-6 mt-10 bg-black bg-opacity-30 glass">
-    <p class="text-gray-400">&copy; 2050 Ciudad del Futuro. Todos los derechos reservados.</p>
+    <p class="text-gray-400" data-lang="&copy; 2050 Ciudad del Futuro. Todos los derechos reservados.|&copy; 2050 Future City. All rights reserved.">
+      &copy; 2050 Ciudad del Futuro. Todos los derechos reservados.
+    </p>
   </footer>
 
-  <!-- AOS Script -->
+  <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({ duration: 1000 });
+
+    const langBtn = document.getElementById("langBtn");
+    let currentLang = "es"; // default
+
+    langBtn.addEventListener("click", () => {
+      currentLang = currentLang === "es" ? "en" : "es";
+      langBtn.textContent = currentLang === "es" ? "English" : "Español";
+
+      document.querySelectorAll("[data-lang]").forEach(el => {
+        const [es, en] = el.getAttribute("data-lang").split("|");
+        el.innerHTML = currentLang === "es" ? es : en;
+      });
+    });
   </script>
 
 </body>
